@@ -1,0 +1,40 @@
+PHP SESSION HANDLING DETAILS
+Purpose of PHP in the Page
+The primary purpose of PHP on this webpage is to process form data entered by users, validate and sanitize the input, and store the data in a MySQL database. It also provides feedback to the user based on the result of the submission.
+Key Functionalities
+1.	Database Connection PHP connects to a MySQL database using the mysqli library, with the following parameters:
+o	Server: localhost
+o	Username: root
+o	Password: ( “password” )
+o	Database: tourg
+This connection enables data interaction between the frontend form and the backend database.
+2.	Form Submission Handling The page uses a POST method to handle form submissions. It checks if the request is of type POST, indicating that the forms have been submitted. The forms collect the following details:
+o	Name
+o	Number of Adults
+o	Number of Children
+o	Destination
+o	Start Date
+o	End Date
+o	Email
+o	Phone Number
+3.	Input Sanitization User inputs are sanitized using the real_escape_string() method to prevent SQL injection attacks and ensure safe storage in the database.
+4.	User Validation Before inserting any data into the database, the script checks if the email provided by the user already exists in the register table of the database. If the email exists, the user's details are considered valid for further actions.
+5.	Data Insertion If the user is registered, the input data is inserted into the respective season table. The SQL query stores user-provided details such as the number of adults, children, destination, start and end dates, email, and phone number.
+6.	User Feedback and Redirection After successful data insertion, a JavaScript alert is triggered to inform the user that their enquiry has been received. The page automatically redirects the user to the home page after a short delay. If an error occurs, it notifies the user of the issue.
+7.	Front-end Integration The page contains a form in HTML that interacts with PHP. After form submission, a message is displayed to the user, dynamically changing its colour based on the result of the operation (success or failure).
+This PHP page effectively uses server-side scripting to handle form data securely and integrates with a MySQL database. It offers a smooth user experience by providing immediate feedback and validation, ensuring the integrity of the data collected. The combination of PHP for backend processing and JavaScript for frontend validation ensures a reliable and responsive system for handling tour-related inquiries.
+
+•	Installations Required:
+o	Xampp server (php, database)
+o	MySQL (database)
+o	Visual Studios (html, css, php, js)
+
+•	Steps to execute the project:
+o	Start Apache and MySql from Xampp
+o	Run welcome.html file in localhost on browser
+o	Welcome page consists of Registration/Sign up, about us, contact us pages followed by season selection option via hyperlink.
+o	On clicking any season (summer/monsoon/winter) the respective pages for each season will open in localhost
+o	Select area you wish vacation in
+o	The next page consists of hyperlinks to recommended travel locations with all necessary information. 
+o	Page also includes a form for further inquiry regarding a more planned recommendation for your selected holiday spot which requires prior registration.
+
